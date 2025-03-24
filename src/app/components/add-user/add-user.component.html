@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header bg-success text-white">
+      <h2>Add New User</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Name</label>
+            <input id="name" type="text" formControlName="name" class="form-control" placeholder="Enter name">
+            <div *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid" class="text-danger">
+              Name is required.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" type="email" formControlName="email" class="form-control" placeholder="Enter email">
+            <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid" class="text-danger">
+              <div *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</div>
+              <div *ngIf="userForm.get('email')?.errors?.['email']">Enter a valid email address.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Phone</label>
+            <input id="phone" type="text" formControlName="phone" class="form-control" placeholder="Enter phone number">
+            <div *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid" class="text-danger">
+              <div *ngIf="userForm.get('phone')?.errors?.['required']">Phone number is required.</div>
+              <div *ngIf="userForm.get('phone')?.errors?.['minlength']">Phone number must be at least 10 digits.</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="address" class="form-label">Address</label>
+            <input id="address" type="text" formControlName="address" class="form-control" placeholder="Enter address">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Add User</button>
+      </form>
+
+      <div *ngIf="successMessage" class="alert alert-success mt-3">
+        {{ successMessage }}
+      </div>
+    </div>
+  </div>
+</div>

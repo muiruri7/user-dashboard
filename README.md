@@ -1,27 +1,44 @@
-# UserDashboard
+# User Dashboard Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+This is a dynamic user dashboard built with Angular. It allows you to manage users by displaying them in a table, filtering the list, viewing detailed information, and adding new users via a reactive form. Additionally, it features a simple counter component that demonstrates state management using an Angular service and RxJS.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Building for Production](#building-for-production)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- **Dynamic User Dashboard:** View a list of users with columns for Name, Email, Phone, and Actions.
+- **Search & Filter:** Filter users by name or email using a custom pipe.
+- **User Details:** View detailed information (address, company, etc.) for a selected user.
+- **Add User:** Use a reactive form with validations to add a new user.
+- **State Management:** A counter component with Increment, Decrement, and Reset buttons demonstrating real-time state management.
+- **Navigation:** A responsive navbar for easy navigation between different components.
+- **Styling:** Utilizes Bootstrap for a clean, responsive UI.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Prerequisites
 
-## Running unit tests
+- [Node.js](https://nodejs.org/en/) (v12 or later)
+- [Angular CLI](https://angular.io/cli) (v14 or later)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+1. **Clone the Repository:**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   git clone https://github.com/muiruri7/user-dashboard.git
+   cd user-dashboard
 
-## Further help
+2. **Install Dependencies:**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    npm install
+
+3. **Running the Application:**
+
+    '''ng serve'''
+    Then, open your browser and navigate to http://localhost:4200 to view the application.
