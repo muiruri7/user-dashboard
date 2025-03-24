@@ -20,7 +20,7 @@ export class AddUserComponent {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.minLength(10)]],
-      address: [''],
+      address: ['']
     });
   }
 
@@ -28,9 +28,10 @@ export class AddUserComponent {
     if (this.userForm.valid) {
       const newUser: User = this.userForm.value;
       this.userService.addUser(newUser);
+      console.log('User Data:', this.userForm.value);
       this.successMessage = 'User added successfully!';
       this.userForm.reset();
-      this.router.navigate(['/']);
+      this.router.navigate(['/']); 
     } else {
       this.userForm.markAllAsTouched();
     }
