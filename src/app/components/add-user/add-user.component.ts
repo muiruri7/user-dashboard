@@ -31,7 +31,7 @@ export class AddUserComponent {
       console.log('User Data:', this.userForm.value);
       this.successMessage = 'User added successfully!';
       this.userForm.reset();
-      this.router.navigate(['/']); 
+      // this.router.navigate(['/']); 
     } else {
       this.userForm.markAllAsTouched();
     }
